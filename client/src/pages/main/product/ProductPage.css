@@ -1,0 +1,59 @@
+#product {
+  text-transform: capitalize;
+}
+#product .brand {
+  color: gray;
+}
+.rr {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  color: gray;
+  font-size: medium;
+  font-weight: 600;
+}
+#product .rate {
+  background-color: yellow;
+  color: #000;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+  gap: 4px;
+}
+.dis {
+  color: green;
+  font-size: 14px;
+  font-weight: 600;
+}
+.old-price {
+  font-size: 1rem;
+  font-weight: 400;
+}
+#product .value {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.del-btn {
+  background: #000;
+  color: #fff;
+  text-transform: capitalize;
+}
+.deliver {
+  margin-bottom: 1rem;
+}
+#product input {
+  border: none;
+  border-bottom: 2px solid #000;
+  text-transform: capitalize;
+}
+.gray {
+  color: gray;
+}
+.data {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  padding: 1rem 0;
+}

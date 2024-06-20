@@ -1,0 +1,143 @@
+.home-card {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+  transition: 0.3s ease-in-out;
+  max-width: 400px;
+  margin: auto;
+}
+.home-card:hover {
+  transform: translateY(-5px);
+}
+.img-box {
+  overflow: hidden;
+  position: relative;
+  border-bottom: 1px solid #f7f7f7;
+  background-color: #fff;
+  border-radius: 10px 10px 0 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img-box img {
+  transform: scale(0.8);
+  transition: 0.3s ease-in-out;
+}
+.img-box:hover img {
+  transform: scale(1);
+}
+.like {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  color: #000;
+  font-size: larger;
+}
+.save {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 4px 0.6rem;
+  background-color: #000;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 0 10px 0;
+  animation: bounce 0.5s infinite alternate;
+}
+.yellow {
+  color: yellow;
+}
+
+@keyframes bounce {
+  from {
+    padding-top: 4px;
+    padding-bottom: 0;
+  }
+  to {
+    padding-top: 0;
+    padding-bottom: 4px;
+  }
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background-color: #000;
+  color: yellow;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 2px 4px;
+  border-radius: 0 5px 0 0;
+  font-weight: 400;
+}
+.count {
+  color: #fff;
+}
+.home-card .brand {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 0 4px;
+  font-weight: 300;
+  font-size: small;
+  background-color: #fff;
+}
+.home-card .text-box {
+  position: relative;
+  padding: 1rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.home-card .title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  font-size: 16px;
+  text-overflow: ellipsis;
+}
+.home-card .category {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: small;
+  text-transform: capitalize;
+}
+.home-card .prices {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+.old-price {
+  color: gray;
+  font-size: 14px;
+}
+.home-card .new-price {
+  color: #000;
+  font-size: 20px;
+  font-weight: 600;
+}
+.description {
+  margin: 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  font-size: 14px;
+  text-overflow: ellipsis;
+}
+.home-card .cart {
+  width: 95%;
+  margin: 6px auto;
+  padding: 0.6rem;
+  border: none;
+  display: block;
+  background-color: #000;
+  color: #fff;
+  border-radius: 10px;
+  text-transform: capitalize;
+}

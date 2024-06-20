@@ -1,0 +1,18 @@
+.address-box {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  text-transform: capitalize;
+}
+.address-box input {
+  background-color: #fff;
+  color: #000 !important;
+  outline: none;
+  border-bottom: 2px solid var(--main);
+  flex: 1;
+}
+.address-box .map {
+  background-color: transparent;
+  color: #2771f2 !important;
+  font-weight: 600;
+}

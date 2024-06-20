@@ -1,0 +1,22 @@
+.not-found {
+  width: 600px;
+  height: 200px;
+  margin: 2rem auto;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.not-found h2 {
+  text-transform: uppercase;
+  font-weight: 400;
+}
+@media only screen and (max-width: 600px) {
+  .not-found {
+    width: 300px;
+    margin: auto;
+  }
+}
