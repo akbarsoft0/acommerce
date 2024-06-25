@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setAllProducts } from "../../../services/providers/redux/featuresSlice";
+import MyCarousel from "../../../components/carousel/MyCarousel";
 
 function Home() {
   const dispatch = useDispatch();
@@ -73,16 +74,20 @@ function Home() {
   if (!allProducts && !category) return <>loading..</>;
 
   return (
-    <section id="home" className="container">
-      <Sidebar
-        category={category}
-        handleFilter={handleFilter}
-        handleSearch={handleSearch}
-        handleSort={handleSort}
-        allProducts={allProducts}
-        setProducts={setProducts}
-      />
-      <HomeCard data={data} />
+    <section className="container">
+      <MyCarousel />
+      <div id="home">
+        <Sidebar
+          category={category}
+          handleFilter={handleFilter}
+          handleSearch={handleSearch}
+          handleSort={handleSort}
+          allProducts={allProducts}
+          setProducts={setProducts}
+        />
+
+        <HomeCard data={data} />
+      </div>
     </section>
   );
 }

@@ -1,0 +1,12 @@
+#my-carousel .carousel {
+  margin: 0;
+  margin-top: 4rem;
+  max-height: 400px;
+  border-radius: 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.carousel img {
+  width: 100%;
+  max-height: 400px;
+  object-position: center;
+}

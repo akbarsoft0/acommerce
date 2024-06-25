@@ -12,9 +12,29 @@ import {
   decreaseQuantity,
   increaseQuantity,
 } from "../../../services/providers/redux/featuresSlice";
+import { toast } from "react-toastify";
 
 function HomeCard({ data }) {
   const dispatch = useDispatch();
+
+  const addProduct = (item) => {
+    console.log(item);
+    const add = dispatch(addToCart(item));
+    try {
+      if (!add.length === 0) {
+        toast.error("product did not add to cart");
+      }
+      toast.success(
+        `${item?.title
+          .split(" ")
+          .slice(0, 2)
+          .join(" ")} has been added to the cart`
+      );
+    } catch (error) {
+      console.log(error);
+      toast.error(error);
+    }
+  };
 
   // const clcPrice = (price, discountPercentage) => {
   //   const discountedAmount = (price * discountPercentage) / 100;
@@ -26,32 +46,33 @@ function HomeCard({ data }) {
     <>
       {data && data.length > 0 ? (
         <section className="home-box">
-          {data.map((e) => {
+          {data.map((item) => {
             // Calculate discounted price and amount directly
-            const discountedAmount = (e.price * e.discountPercentage) / 100;
-            const oldPrice = e.price + discountedAmount;
+            const discountedAmount =
+              (item.price * item.discountPercentage) / 100;
+            const oldPrice = item.price + discountedAmount;
             return (
               <article
                 className="home-card"
-                key={e.id}
-                onClick={() => dispatch(setShow(e))}
+                key={item.id}
+                onClick={() => dispatch(setShow(item))}
               >
                 <div className="img-box">
                   <span className="like">
                     <FaRegHeart />
                   </span>
-                  <Link to={`product/${e.id}`}>
+                  <Link to={`product/${item.id}`}>
                     <img
                       priority="true"
-                      src={e.thumbnail}
-                      alt={e.title}
+                      src={item.thumbnail}
+                      alt={item.title}
                       className="img-fluid"
                     />
                   </Link>
                   <div className="rating">
                     <AiFillStar />
-                    <strong className="rate">{e.rating}</strong>
-                    <span className="count">({e.stock})</span>
+                    <strong className="rate">{item.rating}</strong>
+                    <span className="count">({item.stock})</span>
                   </div>
                   <span className="save">
                     !save upto{" "}
@@ -59,23 +80,23 @@ function HomeCard({ data }) {
                       <FormattedPrice amount={discountedAmount} />
                     </span>
                   </span>
-                  <span className="brand">{e.brand}</span>
-                  {/* <h6>{e.discountPercentage}%</h6> */}
+                  <span className="brand">{item.brand}</span>
+                  {/* <h6>{item.discountPercentage}%</h6> */}
                 </div>
                 <div className="text-box">
-                  <h5 className="title">{e.title}</h5>
-                  <span className="category">{e.category}</span>
+                  <h5 className="title">{item.title}</h5>
+                  <span className="category">{item.category}</span>
                   <div className="prices">
                     <h6 className="new-price">
-                      <FormattedPrice amount={e.price} />
+                      <FormattedPrice amount={item.price} />
                     </h6>
                     <del className="old-price">
                       <FormattedPrice amount={oldPrice} />
                     </del>
                   </div>
-                  <p className="description">{e.description}</p>
+                  <p className="description">{item.description}</p>
                 </div>
-                <button className="cart" onClick={() => dispatch(addToCart(e))}>
+                <button className="cart" onClick={() => addProduct(item)}>
                   add to cart
                 </button>
               </article>

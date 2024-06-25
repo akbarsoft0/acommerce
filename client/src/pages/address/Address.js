@@ -11,8 +11,6 @@ import {
 function Address({ handleClose }) {
   console.log(handleClose);
   const [pin, setPin] = useState();
-  // const [address, setAddress] = useState;
-  // https://nominatim.openstreetmap.org/search.php?postalcode=324005&format=jsonv2
 
   const dispatch = useDispatch();
 

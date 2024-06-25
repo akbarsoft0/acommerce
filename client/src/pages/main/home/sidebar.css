@@ -1,60 +1,38 @@
 #sidebar {
   position: sticky;
-  top: 4rem;
+  top: 15%;
   background-color: #000;
   color: #fff;
 
   display: flex;
   flex-direction: column;
-  align-items: center;
-  /* justify-content: center; */
+  justify-content: space-evenly;
   gap: 1rem;
   padding: 4rem 1rem;
 
-  /* height: 70vh; */
   border-radius: 10px;
 }
-#sidebar #search {
-  width: 80%;
-  padding: 0.6rem;
-  background-color: #fff;
-  border: none;
-}
+#sidebar #search,
 #sidebar #sort {
-  width: 80%;
-  padding: 0.6rem;
-  text-transform: uppercase;
-  background-color: #000;
-  color: #fff;
+  width: 100%;
+  border-radius: 6px;
+  padding: 0.8rem;
+  text-transform: capitalize;
 }
-
 #sidebar .category {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 1rem;
-  align-items: center;
-  justify-content: center;
-  border-top: 1px solid #fff;
-  padding: 1rem 0;
 }
+
 #sidebar .category button {
-  width: 80%;
-  padding: 5px 1rem;
-  border-radius: 50px;
-  background-color: transparent;
-  border: 2px solid #fff;
+  text-transform: capitalize;
+  background-color: #000;
   color: #fff;
-  text-transform: uppercase;
+  border-radius: 50px;
+  border: 1px solid #fff;
 }
-@media screen and (max-width: 992px) {
-  #sidebar {
-    padding: 1rem;
-  }
-  #search,
-  #sort {
-    width: 100%;
-  }
-  #sidebar .category button {
-    width: min-content;
-  }
+#sidebar .category button:hover {
+  background-color: #fff;
+  color: #000;
 }

@@ -1,9 +1,9 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
-import Login from "../../../pages/users/login/Login";
-import { Alert, Snackbar } from "@mui/material";
-import MySnack from "../MySnack";
+import Login from "../../../pages/users/Login";
+import { FaUser } from "react-icons/fa";
+
 const style = {
   position: "absolute",
   top: "50%",
@@ -20,7 +20,8 @@ export default function LoginModal() {
   return (
     <div>
       <button onClick={handleOpen} className="login-btn">
-        Login
+        <FaUser />
+        <span className="d-none d-md-flex">Login</span>
       </button>
       <Modal
         open={open}

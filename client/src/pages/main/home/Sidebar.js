@@ -12,6 +12,7 @@ function Sidebar({
   return (
     <section>
       <div id="sidebar">
+        {/* <div className="between"> */}
         <input
           type="search"
           placeholder="search products"
@@ -27,6 +28,8 @@ function Sidebar({
             <option value="ratings">ratings</option>
           </optgroup>
         </select>
+        {/* </div> */}
+        <hr />
         <div className="category">
           <button onClick={(e) => setProducts(allProducts)}>all</button>
           {category.map((e) => {

@@ -3,7 +3,6 @@ import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Address from "../../../pages/address/Address";
 import { useSelector } from "react-redux";
-import MySnack from "../MySnack";
 
 const style = {
   position: "absolute",
@@ -19,10 +18,11 @@ export default function AddressModal() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  console.log(location);
   return (
     <div>
       <button onClick={handleOpen}>
-        {location ? "change" : "enter delivery pincode"}
+        {location.length === 0 ? "change" : "enter delivery pincode"}
       </button>
       <Modal
         open={open}

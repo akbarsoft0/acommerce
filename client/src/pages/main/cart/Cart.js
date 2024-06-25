@@ -11,7 +11,6 @@ import AddressModal from "../../../components/ui/modals/AddressModal";
 
 function Cart() {
   const { userInfo, cart, location } = useSelector((state) => state.features);
-  console.log(location);
   const [tPrice, setTPrice] = useState();
   useEffect(() => {
     let amt = 0;
@@ -37,7 +36,11 @@ function Cart() {
         <div className="cart-container">
           <div className="card-box">
             <article className="address">
-              {location ? location.full_address : <h6>from saved address</h6>}
+              {location.length !== 0 ? (
+                location.full_address
+              ) : (
+                <h6>from saved address</h6>
+              )}
 
               <AddressModal />
             </article>
@@ -92,7 +95,14 @@ function Cart() {
                 </h6>
               </div>
               <div className="checkout">
-                {!userInfo ? <LoginModal /> : <button>proceed to pay</button>}
+                {!userInfo ? (
+                  <button>
+                    <LoginModal />
+                    login
+                  </button>
+                ) : (
+                  <button>proceed to pay</button>
+                )}
               </div>
             </article>
           </div>

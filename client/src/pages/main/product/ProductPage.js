@@ -57,24 +57,33 @@ function ProductPage() {
     <section id="product">
       <div className="container">
         <div className="row product-detail">
-          <div className="col-lg-4">
-            <div className="img-box">
-              <Lightbox thumbnail={thumbnail} images={images} />
+          <div className="col-lg-4 p-0">
+            <div className="left">
+              <div className="img-box">
+                <Lightbox thumbnail={thumbnail} images={images} />
+              </div>
+
+              <div className="between">
+                <QtyBtn id={id} qty={qty} list="show" />
+
+                <Link to="/cart">
+                  <button
+                    className="add"
+                    onClick={() => dispatch(addToCart(product))}
+                  >
+                    <AiOutlinePlus /> add
+                    <span className="d-none d-sm-inline"> to cart</span>
+                  </button>
+                </Link>
+              </div>
+              <div className="between meta">
+                <img src={qrCode} alt="" width={100} height={100} />
+                <div>
+                  <h6>{barcode}</h6>
+                  <h6>{sku}</h6>
+                </div>
+              </div>
             </div>
-            <div className="between">
-              <QtyBtn id={id} qty={qty} list="show" />
-              <Link to="/cart">
-                <button
-                  className="add"
-                  onClick={() => dispatch(addToCart(product))}
-                >
-                  add to cart
-                </button>
-              </Link>
-            </div>
-            <img src={qrCode} alt="" width={200} height={200} />
-            <h6>{barcode}</h6>
-            <h6>{sku}</h6>
           </div>
           <div className="col-lg-8">
             <article className="text-box">
@@ -135,8 +144,12 @@ function ProductPage() {
               <div className="data">
                 <h6>description</h6>
                 <p>{description}</p>
-                <h6>brand</h6>
-                <p>{brand}</p>
+                {brand && (
+                  <>
+                    <h6>brand</h6>
+                    <p>{brand}</p>
+                  </>
+                )}
                 <h6>category</h6>
                 <p>{category}</p>
                 <h6>availabilityStatus</h6>

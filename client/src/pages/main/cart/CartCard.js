@@ -11,7 +11,6 @@ import QtyBtn from "../../../components/ui/buttons/QtyBtn";
 import { Link, useNavigate } from "react-router-dom";
 
 function CartCard({ item }) {
-  console.log(item);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const handleClick = () => {

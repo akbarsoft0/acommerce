@@ -1,4 +1,5 @@
 import React from "react";
+import "./qty-btn.css";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import {
   decreaseQuantity,
@@ -20,7 +21,7 @@ function QtyBtn({ id, qty, list }) {
       <span onClick={handleDecrease}>
         <AiOutlineMinus />
       </span>
-      <h3>{qty}</h3>
+      <strong>{qty}</strong>
       <span onClick={handleIncrease}>
         <AiOutlinePlus />
       </span>
